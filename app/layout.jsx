@@ -1,8 +1,34 @@
 import Navbar from './components/navbar/Navbar';
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Raleway } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ['latin'] });
+const raleway = Raleway({ subsets: ['latin'] });
+const museoSansCyrl = localFont({
+    src: [
+        {
+            path: './assets/fonts/MuseoSansCyrl300.woff',
+            weight: '300',
+            style: 'normal',
+        },
+        {
+            path: './assets/fonts/MuseoSansCyrl500.woff',
+            weight: '500',
+            style: 'normal',
+        },
+        {
+            path: './assets/fonts/MuseoSansCyrl700.woff',
+            weight: '700',
+            style: 'normal',
+        },
+        {
+            path: './assets/fonts/MuseoSansCyrl900.woff',
+            weight: '900',
+            style: 'normal',
+        },
+    ],
+    variable: '--museo-sans',
+});
 
 export const metadata = {
     title: 'CONVEX | Доставка еды',
@@ -33,15 +59,14 @@ export default function RootLayout({ children }) {
                     sizes="16x16"
                     href="/favicons/favicon-16x16.png"
                 />
-                <link rel="manifest" href="/favicons/site.webmanifest" />
+                {/* <link rel="manifest" href="/favicons/site.webmanifest" /> */}
                 <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5" />
                 <meta name="msapplication-TileColor" content="#da532c" />
             </head>
-            <body className={inter.className}>
-              <Navbar />
-              {children}
-              </body>
+            <body className={museoSansCyrl.className}>
+                <Navbar />
+                {children}
+            </body>
         </html>
     );
 }
-
