@@ -12,7 +12,7 @@ module.exports = {
       "body": "#73798C",
       "green": "#46C578",
       "red": "#FF3D3D",
-      "grey": "#F4F5FA",
+      "gray": "#F4F5FA",
       "lightGray": "#F0F0F0",
     },
     screens: {

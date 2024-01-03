@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import logo from '@/app/assets/convex_logo.svg';
+import SearchInput from './SearchInput';
 export default function Navbar() {
     return (
         <header className="xl:max-w-[1080px] 2xl:max-w-[1200px] mx-auto px-3 py-6">
@@ -15,7 +16,12 @@ export default function Navbar() {
                         </p>
                     </div>
                 </div>
+                <SearchInput />
+                <div className="flex justify-end">
+                    <button className='rounded-full py-2 px-5'>Войти</button>
+                </div>
             </div>
+            <hr className="text-lightGray h-[1px] my-5" />
             <nav></nav>
         </header>
     );
