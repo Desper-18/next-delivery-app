@@ -1,9 +1,7 @@
 import Navbar from './components/navbar/Navbar';
 import './globals.css';
-import { Raleway } from 'next/font/google';
 import localFont from 'next/font/local';
 
-const raleway = Raleway({ subsets: ['latin'] });
 const museoSansCyrl = localFont({
     src: [
         {
@@ -33,9 +31,6 @@ const museoSansCyrl = localFont({
 export const metadata = {
     title: 'CONVEX | Доставка еды',
     description: 'Доставляем с радостью, быстро!',
-    icons: {
-        icon: '/favicons/favicon.ico',
-    },
 };
 
 export default function RootLayout({ children }) {

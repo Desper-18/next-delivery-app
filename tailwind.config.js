@@ -11,9 +11,11 @@ module.exports = {
       "captions": "#A7AED2",
       "body": "#73798C",
       "green": "#46C578",
+      "paleGreen": "#74D69A",
       "red": "#FF3D3D",
       "gray": "#F4F5FA",
       "lightGray": "#F0F0F0",
+      "white": "#fff",
     },
     screens: {
       'sm': '640px',

@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
 // Assets
-import logo from '@/app/assets/images/convex_logo.svg';
-import IconLocation from '@/app/assets/images/icons/location.svg';
+import logoUrl from '@/app/assets/images/convex_logo.svg?url';
+import IconLocationUrl from '@/app/assets/images/icons/location.svg?url';
+import IconCartUrl from '@/app/assets/images/icons/cart.svg?url';
 
 // Components
 import SearchInput from './SearchInput';
@@ -44,6 +45,14 @@ export default function Navbar() {
                     title: 'Item 1',
                     path: '',
                 },
+                {
+                    title: 'Item 2',
+                    path: '',
+                },
+                {
+                    title: 'Item 3',
+                    path: '',
+                },
             ],
         },
         {
@@ -74,11 +83,12 @@ export default function Navbar() {
             ],
         },
     ];
+
     return (
         <header className="xl:max-w-[1080px] 2xl:max-w-[1200px] mx-auto px-3 py-6">
             <div className="grid grid-cols-3 gap-4">
                 <div className="flex items-center gap-12">
-                    <Image src={logo} className="h-[42px] w-[100px]" alt="logo" />
+                    <Image src={logoUrl} className="h-[42px] w-[100px]" alt="logo" />
                     <div className="flex flex-col grow">
                         <p className="text-captions text-sm leading-normal">Бесплатный звонок</p>
                         <p className="text-title font-medium text-[22px] leading-normal">
@@ -90,7 +100,7 @@ export default function Navbar() {
                 <div className="flex justify-end items-center gap-12">
                     <div className="flex flex-col gap-0.5 items-end">
                         <div className="text-green flex gap-1">
-                            <Image src={IconLocation} alt="Location icon" />
+                            <Image src={IconLocationUrl} alt="Location icon" />
                             ЕЦ-166/4
                         </div>
                         <span className="text-captions text-xs">Нур-Султан</span>
@@ -102,10 +112,27 @@ export default function Navbar() {
             </div>
             <hr className="text-lightGray h-[1px] my-5" />
             <nav>
-                <ul className="list-none flex gap-7">
+                <ul className="list-none flex gap-6 items-center">
                     {navMenus.map((navMenu, index) => (
                         <NavbarItem key={index} item={navMenu} />
                     ))}
+                    <li className='ms-auto'>
+                        <button className='bg-green text-white flex items-center gap-2 p-2 rounded-lg'>
+                            {/* <IconCartUrl /> */}
+                            <Image src={IconCartUrl} alt="cart icon" />
+                            <div className='flex flex-col'>
+                                <span className='font-medium'>
+                                    Корзина
+                                </span>
+                                <span className='font-normal text-xs text-start leading-none opacity-65'>
+                                    2 400 г.
+                                </span>
+                            </div>
+                            <span className='p-2 leading-none rounded-lg bg-paleGreen'>
+                                12
+                            </span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
         </header>
